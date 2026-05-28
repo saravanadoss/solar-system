@@ -43,7 +43,36 @@ jobs:
             name: Mocha-Test-Result
             path: test-results.xml
 
+    code-coverage:
+        name: Code Coverage
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout Repository
+            uses: actions/checkout@v4
+
+          - name: Setup NodeJS version -18
+            uses: actions/setup-node@v3
+            with:
+              node-version: 18
+
+          - name: Install Dependecies 
+            run: npm install
+
+          - name: Check Code Coverage
+            run: npm run coverage
           
+          - name: Archhive Test Results
+            uses: actions/upload-artifact@v7
+            with:
+              path: coverage
+              retention-days: 5
+
+
+
+
+
+          
+
          
 
         
