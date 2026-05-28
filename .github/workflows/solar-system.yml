@@ -1,7 +1,7 @@
 name: Solar System Worflow
 
 on:
-  workflow_dispacth:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -9,23 +9,15 @@ on:
 
 jobs:
     unit-testing:
-      name: unit testing
-      runs-on: ubuntu-latest
+        name: unit testing
+        runs-on: ubuntu-latest
+        
+
+        
+        
+        
+
       
-      steps:
-
-      - name: Checkout Repository
-      - uses: actions/checkout@v4
-      
-      - name: Setup NodeJS version - 18
-      - uses: actions/setup-node@v3
-          with:
-          node-version: 18
-
-      - name: Available expression contexts: github, inputs, vars, needs, starategy, matrix, secrets, steps, job,
-        run: runner, env
-
-      - name: Available expression functions: hashFiles
-        run: npm test
+            
         
 
